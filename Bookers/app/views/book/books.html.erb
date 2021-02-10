@@ -1,0 +1,18 @@
+<head>
+<h1>Books</h1>
+</head>
+
+
+
+    <div class ="book-wrap">
+    <%@books.each do |book|%>
+    <div class="book-box">
+
+    <div class="book-comment">
+    <span class="book-title"><%=link_to book.title%></span>
+        <span class="book-body"><%=book.body%></span>
+
+    </div>
+</div>
+    <%end%>
+</div>
