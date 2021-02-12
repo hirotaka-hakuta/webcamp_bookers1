@@ -1,0 +1,38 @@
+   <% if flash[:notice] %>
+     <p class="s-text" id="notice">
+       <%= flash[:notice] %>
+     </p>
+   <% end %>
+<h1>Booker</h1>
+<h4>投稿一覧</h4>
+<div class ="book-wrap">
+<p>タイトル</p>
+<p>本文</p>
+
+</div>
+<%@books.each do |book|%>
+<%if book.title != nil && book.body != nil%>
+<div class ="book-wrap">
+<%=book.id%>
+<span><%=book.title%></span>
+<span><%=book.body%></span>
+<span><%=link_to "Show",show_books_path(book)%></span>
+<span><%=link_to "Edit",edit_books_path(book)%></span>
+<span><%=link_to "Destroy",destroy_books_path(book),method: :delete ,data: {confirm: "Are you sure?"}%></span>
+</div>
+<%end%>
+<%end%>
+
+
+
+
+<%=form_with model:@book,url:"books",local:true do |f|%>
+
+<%= render 'layouts/error_messages', model: f.object%>
+
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
+  <h4>本文</h4>
+  <%= f.text_area :body %>
+  <%= f.submit '投稿' %>
+<%end%>
