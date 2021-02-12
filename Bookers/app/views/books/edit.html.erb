@@ -1,10 +1,13 @@
 <h1>EditEditing Book</h1>
 <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
-  <p class="label">title</p>
+ <div> <p class="label">title</p>
   <%= f.text_field :title %>
-  <p class="label">body</p>
+</div>
+ <div> <p class="label">body</p>
   <%= f.text_area :body %>
-  <%= f.submit 'Updata Book' %>
+</div>
+<div>  <%= f.submit 'Updata Book' %>
+</div>
 <% end %>
 <span>
   <p class="mini-menu"><%= link_to "Show", show_books_path(@book.id) %>|

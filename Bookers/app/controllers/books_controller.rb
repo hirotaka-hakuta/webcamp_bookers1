@@ -8,21 +8,17 @@ class BooksController < ApplicationController
   def book
       @books=Book.all
       @book=Book.new
-
   end
-
  def create
 
-      book = Book.new(book_params)
+      @book = Book.new(book_params)
 
     if book.save
       flash[:notice]="Book was successfully created"
       redirect_to books_path
     else
-       @books=Book.all
-       @book=Book.new
-       model=Book.all
-        render("book")
+      @books=Book.all
+      render "book"
     end
   end
 
