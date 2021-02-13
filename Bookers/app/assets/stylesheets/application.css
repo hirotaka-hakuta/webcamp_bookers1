@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
+
+a {
+  color:black;
+text-decoration:underline;
+}
+
+a:visited {
+
+color:gray;
+text-decoration:underline;
+
+}
+
+body{
+    margin: 33px;
+}
+p,ul,td{
+    margin: 33px;
+}
+
+.title1{
+
+}
+.book1{
+
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+td{
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+        display: table-cell;
+    vertical-align: inherit;
+}
+.book-title,.book-body{
+  word-break : break-all;
+}
+
+.link-menu{
+    border-bottom: 1px,solid,black;
+}
+.text-box{
+
+}
+.mini-menu{
+
+}

@@ -3,18 +3,18 @@
        <%= flash[:notice] %>
      </p>
    <% end %>
-<h1>Booker</h1>
-<h4>投稿一覧</h4>
-<div class ="book-wrap">
+<h1>Books</h1>
 
 <table>
-<tr>
-<th class="title1">title</th>
-<th class="body1">body</th>
-</tr>
-</div>
+
+  <tr>
+    <th class="title1">Title</th>
+    <th class="body1">Body</th>
+<th colspan="3"></th>
+  </tr>
+
 <%@books.each do |book|%>
-<div class ="book-wrap">
+
 <tr>
 <td class="book-title"><%=book.title%></td>
 <td class="book-body"><%=book.body%></td>
@@ -22,21 +22,24 @@
 <td class="link-menu"><%=link_to "Edit",edit_books_path(book)%></td>
 <td class="link-menu"><%=link_to "Destroy",destroy_books_path(book),method: :delete ,data: {confirm: "Are you sure?"}%></td>
 </tr>
-</div>
-</table>
+
 <%end%>
+</table>
 
 
 
 <h2>New book</h2>
-<%=form_with model:@book,url:"books",local:true do |f|%>
+<%=form_with model:@books,url:"books",local:true do |f|%>
 
 <p>
-<%= render 'layouts/error_messages', model: f.object%>
+
+<%= render 'layouts/error_messages', model: @book%>
+
 </p>
-  <h4>タイトル</h4>
+  <h4>title</h4>
   <%= f.text_field :title %>
-  <h4>本文</h4>
+  <h4>body</h4>
   <%= f.text_area :body %>
-  <%= f.submit '投稿' %>
+
+  <%= f.submit 'Create Book' %>
 <%end%>
