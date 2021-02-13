@@ -10,7 +10,6 @@
   <p class="text-box"><strong>Body: </strong><%= @book.body %></p>
 </span>
 <span>
-  <div class="mini-menu"><%= link_to "Edit", edit_books_path(@book.id) %>|
+  <%= link_to "Edit", edit_book_path(@book.id) %>|
   <%=link_to "Back",books_path%>
-  </div>
-</span>
+ </span>

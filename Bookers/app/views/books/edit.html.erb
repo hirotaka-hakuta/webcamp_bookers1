@@ -7,10 +7,10 @@
  <div> <p class="label">body</p>
   <%= f.text_area :body %>
 </div>
-<div>  <%= f.submit 'Updata Book' %>
+<div>  <%= f.submit 'Update Book' %>
 </div>
 <% end %>
 <span>
-  <p class="mini-menu"><%= link_to "Show", show_books_path(@book.id) %>|
+  <p class="mini-menu"><%= link_to "Show", book_path(@book.id) %>|
   <%=link_to "Back",books_path%></p>
 </span>
